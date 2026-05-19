@@ -1,0 +1,36 @@
+.nav{
+    background-color: gray;
+    display: flex;
+    gap: 20px;
+}
+
+.form{
+    border: 2px solid black;
+    width: 400px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+}
+.btn{
+    background-color: green;
+    color: white;
+}
+
+.card{
+    width: 350px;
+    border: 2px solid black;
+}
+.image{
+    width: 100%;
+    height: 200px;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
