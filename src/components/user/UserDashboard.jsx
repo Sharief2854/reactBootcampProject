@@ -1,10 +1,15 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom'
+import UserNav from './UserNav';
 
 function UserDashboard() {
+
+
+    
   return (
     <div>
-        <h1>Navbar</h1>
+        <UserNav/>
+        
         <Outlet/>
     </div>
   )

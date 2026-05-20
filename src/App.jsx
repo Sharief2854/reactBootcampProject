@@ -9,6 +9,7 @@ import UserDashboard from './components/user/UserDashboard';
 import UserHome from './components/user/UserHome';
 import ProtectedRoute from './components/user/ProtectedRoute';
 import ProductDetails from './components/user/ProductDetails';
+import Cart from './components/user/Cart';
 
 function App() {
   return (
@@ -28,6 +29,8 @@ function App() {
 
                     <Route index element={<UserHome/>}/>
                     <Route path='/userDashboard/productDetails/:id' element={<ProductDetails/>}/>
+                    <Route path='/userDashboard/cart' element={<Cart/>}/>
+                    
                 </Route>
             </Routes>
         </BrowserRouter>

@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import todoSlice from "./todoSlice";
+import cartSlice from "./cartSlice";
 
 let store=configureStore({
     reducer:{
-        todo:todoSlice.reducer,
-        // counter:counterSlice.reducer
+        cart:cartSlice.reducer
     }
 });
+
 export default store;

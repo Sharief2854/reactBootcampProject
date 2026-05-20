@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addItem } from '../../store/cartSlice';
 function UserHome() {
 
   const [products, setproducts] = useState([]);
 
   let navigate=useNavigate();
+  let dispatch=useDispatch();
 
   async function getData(){
-    let res=await axios.get("https://fakestoreapi.com/products");
-    console.log(res.data);
+    let res=await axios.get("https://fakestoreapi.com/products");//2s
+    // console.log(res.data);
     setproducts(res.data);
   }
+
 
   let result=products.map((item,ind)=>{
     return(
@@ -20,8 +24,15 @@ function UserHome() {
             <h1>{item.title}</h1>
             <h5>{item.category}</h5>
             <h1>Rs.{item.price}</h1>
-            <button>Add to cart</button>
-        <button onClick={() => navigate(`/userDashboard/productDetails/${item.id}`)}>open</button>
+            <button 
+              onClick={()=>{
+                dispatch(addItem(item));
+                alert("item added to cart");
+              }}
+            >
+                Add to cart
+            </button>
+            <button onClick={() => navigate(`/userDashboard/productDetails/${item.id}`)}>open</button>
         </div>
     )
   });
